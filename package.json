@@ -1,11 +1,11 @@
 {
-  "name": "@stewartmcgown/grammarly-api",
+  "name": "@jasonCrank/itiswhatitisapi",
   "version": "1.1.1",
   "description": "Client for the Grammarly API",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
-  "repository": "https://github.com/stewartmcgown/grammarly-api",
+  "repository": "https://github.com/JasonCrank/itiswhatitisapi",
   "author": "Stewart McGown <stewart@twistedcore.co.uk>",
   "license": "MIT",
   "keywords": [],
