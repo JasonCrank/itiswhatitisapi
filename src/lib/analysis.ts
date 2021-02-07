@@ -93,7 +93,7 @@ function sort(result) {
  */
 export function correct(result: GrammarlyResult): GrammarlyResult {
   const { alerts } = result;
-  alerts = alerts.sort(compare);
+  alerts = alerts.sort();
   return alerts.reduce((prev, currentAlert) => {
     const { text, diff } = applyTransform(
       prev.corrected || prev.original,
