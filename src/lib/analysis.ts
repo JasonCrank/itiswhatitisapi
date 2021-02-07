@@ -78,7 +78,7 @@ export function updateAlert(
   };
 }
 
-function correct(result) {
+function sort(result) {
   if (a.highlightBegin < b.highlightBegin){
     return -1; 
   }
