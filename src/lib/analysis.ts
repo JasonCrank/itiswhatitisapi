@@ -1,5 +1,6 @@
 import { GrammarlyResult } from './api';
 import { ProblemResponse } from './responses';
+const sortArray = require('sort-array')
 
 export interface TransformResult {
   /**
@@ -77,31 +78,22 @@ export function updateAlert(
     }
   };
 }
-/**
-function sort(result) {
-  if (a.highlightBegin < b.highlightBegin){
-    return -1; 
-  }
-  if (a.highlightBegin > b.highlightBegin){
-    return 1;
-  }
-  return 0;
-}
+
 
 /**
  * Corrects a Grammarly result and returns the updated object
  */
 export function correct(result: GrammarlyResult): GrammarlyResult {
-  const { alerts } = result;
-  alerts = sortArray(alerts, {by: 'highlightBegin',order: 'asc'});
-  return alerts.reduce((prev, currentAlert) => {
+  //const { alerts } = result;
+  const alerts = sortArray(result, {by: 'highlightBegin',order: 'asc'});
+  return alerts.reduce((prev: any, currentAlert: any) => {
     const { text, diff } = applyTransform(
       prev.corrected || prev.original,
       currentAlert
     );
 
     // Apply diff to every appropriate part of the following alerts
-    prev.alerts.forEach((tbd, i) => {
+    prev.alerts.forEach((tbd: any, i: any) => {
       prev.alerts[i] = updateAlert(tbd, diff);
     });
 
